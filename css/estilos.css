@@ -1,0 +1,896 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #25233a;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(23, 59, 101, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.menu h1 {
+    font-size: 22px;
+    color: #173B65;
+    white-space: nowrap;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #253B53;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #2563EB;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #2563EB;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   INICIO
+========================= */
+
+.logo-fondo {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.30;
+    z-index: 0;
+}
+
+.logo-fondo img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.inicio {
+    min-height: 600px;
+    padding: 100px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #eff6ff);
+    position: relative;
+}
+
+.inicio-contenido {
+    max-width: 750px;
+    position: relative;
+    z-index: 1;
+}
+
+.etiqueta {
+    color: #2563EB;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.inicio h2 {
+    font-size: 58px;
+    margin-bottom: 20px;
+    color: #173B65;
+}
+
+.inicio p:not(.etiqueta) {
+    font-size: 20px;
+    color: #66637a;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.boton {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #173B65;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #102A43;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(23, 59, 101, 0.30);
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 30px;
+}
+
+.fondo {
+    max-width: none;
+    background-color: #e8f1fa;
+}
+
+.fondo > * {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion p {
+    color: #173B65;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.titulo-seccion h2 {
+    font-size: 38px;
+    color: #173B65;
+}
+
+.texto-centro {
+    max-width: 800px;
+    margin: 0 auto 45px;
+    text-align: center;
+    color: #66637a;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.tarjeta {
+    background-color: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #b9d3ee;
+    box-shadow: 0 5px 20px rgba(23, 59, 101, 0.10);
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.tarjeta h3 {
+    color: #173B65;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    color: #66637a;
+    margin-bottom: 12px;
+}
+
+.tarjeta.grande {
+    padding: 35px;
+}
+
+
+/* =========================
+   INTEGRANTES
+========================= */
+
+.integrantes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+.integrantes .tarjeta {
+    text-align: center;
+    border-top: 4px solid #173B65;
+}
+
+.integrantes .tarjeta h3 {
+    font-size: 20px;
+    color: #173B65;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    background-color: #e8f1fa;
+    border-radius: 18px;
+    border: 1px solid #b9d3ee;
+    box-shadow: 0 5px 20px rgba(23, 59, 101, 0.10);
+    position: relative;
+    overflow: hidden;
+}
+
+.historia::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #173B65;
+}
+
+.historia-bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.historia-bloque {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #b9d3ee;
+    transition: 0.3s;
+}
+
+.historia-bloque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(23, 59, 101, 0.15);
+}
+
+.historia-bloque span {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.historia-bloque h3 {
+    color: #173B65;
+    margin-bottom: 12px;
+}
+
+.historia-bloque p {
+    color: #66637a;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   DOS COLUMNAS
+========================= */
+
+.dos-columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* =========================
+   DESCRIPCIÓN DEL PROYECTO
+========================= */
+
+#proyecto .dos-columnas .tarjeta {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+#proyecto .dos-columnas .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+#proyecto .dos-columnas .tarjeta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #173B65;
+}
+
+
+/* =========================
+   MISIÓN Y VISIÓN
+========================= */
+
+.especial {
+    text-align: center;
+    border-top: 4px solid #173B65;
+    transition: 0.3s;
+}
+
+.especial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.especial span {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.especial h3 {
+    font-size: 25px;
+}
+
+
+/* =========================
+   CLASIFICACIÓN
+========================= */
+
+.clasificaciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.clasificaciones .tarjeta {
+    text-align: center;
+    border-top: 4px solid #173B65;
+    transition: 0.3s;
+}
+
+.clasificaciones .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.clasificaciones span {
+    font-size: 35px;
+}
+
+.clasificaciones h4 {
+    color: #302c55;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   CONTEXTO
+========================= */
+
+#contexto .dos-columnas .tarjeta {
+    position: relative;
+    overflow: hidden;
+}
+
+#contexto .dos-columnas .tarjeta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 5px;
+    background-color: #173B65;
+}
+
+#contexto .dos-columnas .tarjeta::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55px;
+    height: 5px;
+    background-color: #173B65;
+}
+
+.datos-contexto {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.datos-contexto div {
+    padding: 25px;
+    background-color: #f8f7ff;
+    border-radius: 15px;
+    text-align: center;
+    border-top: 4px solid #173B65;
+    transition: 0.3s;
+}
+
+.datos-contexto div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(23, 59, 101, 0.15);
+}
+
+.datos-contexto strong {
+    color: #173B65;
+}
+
+.datos-contexto p {
+    color: #66637a;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   FORMA JURÍDICA
+========================= */
+
+.forma-juridica {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.forma-juridica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.forma-juridica::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 5px;
+    background-color: #173B65;
+}
+
+.forma-juridica::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55px;
+    height: 5px;
+    background-color: #173B65;
+}
+
+
+/* =========================
+   ENCUADRE IMPOSITIVO
+========================= */
+
+.encuadre-impositivo {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.encuadre-impositivo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.encuadre-impositivo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 5px;
+    background-color: #173B65;
+}
+
+.encuadre-impositivo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55px;
+    height: 5px;
+    background-color: #173B65;
+}
+
+
+/* =========================
+   FUNCIONES
+========================= */
+
+.funciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.funciones .tarjeta {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.funciones .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.funciones .tarjeta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #173B65;
+}
+
+.funciones span {
+    font-size: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    background-color: #e8f1fa;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.funciones ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: #66637a;
+}
+
+.funciones li {
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   NUESTRA ESCUELA
+========================= */
+
+.escuela {
+    text-align: center;
+}
+
+.tarjetas-escuela {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.escuela .tarjeta {
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.escuela .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.escuela .tarjeta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #173B65;
+}
+
+.botones-escuela {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+/* =========================
+   TARJETA PRÓXIMAMENTE
+========================= */
+
+.tarjeta-plataforma {
+    padding: 35px;
+    border-radius: 18px;
+    background-color: white;
+    color: #25233a;
+    border: 1px solid #b9d3ee;
+    box-shadow: 0 5px 20px rgba(23, 59, 101, 0.10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-plataforma::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #173B65;
+}
+
+.tarjeta-plataforma:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(23, 59, 101, 0.16);
+}
+
+.tarjeta-plataforma .proximamente {
+    color: #173B65;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.tarjeta-plataforma h3 {
+    color: #173B65;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-plataforma p:not(.proximamente) {
+    color: #66637a;
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+.tarjeta-plataforma .boton {
+    background-color: #173B65;
+}
+
+.tarjeta-plataforma .boton:hover {
+    background-color: #102A43;
+}
+
+/* =========================
+   PARTE AZUL DE ABAJO
+========================= */
+
+.plataforma {
+    padding: 90px 30px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #173B65,
+        #102A43
+    );
+    color: white;
+}
+
+.plataforma h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.plataforma small {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   DISEÑO PARA CELULAR
+========================= */
+
+@media (max-width: 900px) {
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .inicio h2 {
+        font-size: 45px;
+    }
+
+    .integrantes,
+    .clasificaciones,
+    .funciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .datos-contexto {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .menu ul {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .inicio {
+        min-height: 500px;
+        padding: 70px 20px;
+    }
+
+    .inicio h2 {
+        font-size: 38px;
+    }
+
+    .inicio p:not(.etiqueta) {
+        font-size: 17px;
+    }
+
+    .seccion {
+        padding: 65px 20px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 30px;
+    }
+
+    .integrantes,
+    .clasificaciones,
+    .funciones,
+    .dos-columnas,
+    .datos-contexto,
+    .tarjetas-escuela {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-bloques {
+        grid-template-columns: 1fr;
+    }
+
+    .botones-escuela {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botones-escuela .boton {
+        width: 200px;
+    }
+
+    .tarjeta-plataforma h3 {
+        font-size: 26px;
+    }
+
+    .plataforma h3 {
+        font-size: 25px;
+    }
+
+}
+
+/* =========================
+   PÁGINA PRÓXIMAMENTE
+========================= */
+
+.proximamente-pagina {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #eff6ff);
+}
+
+.proximamente-pagina .tarjeta {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.proximamente-pagina .tarjeta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #173B65;
+}
+
+.proximamente-pagina .etiqueta {
+    color: #173B65;
+    margin-bottom: 15px;
+}
+
+.proximamente-pagina h1 {
+    color: #173B65;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.proximamente-pagina p:not(.etiqueta) {
+    color: #66637a;
+    margin-bottom: 12px;
+}
+
+.proximamente-pagina .boton {
+    margin-top: 20px;
+}
