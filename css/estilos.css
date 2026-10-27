@@ -850,10 +850,18 @@ header {
 ========================= */
 
 .proximamente-pagina {
+    width: 100%;
+    max-width: none;
     min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: linear-gradient(135deg, #ffffff, #eff6ff);
 }
 
