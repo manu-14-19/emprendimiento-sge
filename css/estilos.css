@@ -90,6 +90,18 @@ header {
     transition: 0.3s;
 }
 
+/* Botón del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #173B65;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
 .menu a:hover {
     color: #2563EB;
 }
@@ -761,10 +773,6 @@ header {
 
 @media (max-width: 900px) {
 
-    .menu {
-        flex-direction: column;
-    }
-
     .inicio h2 {
         font-size: 45px;
     }
@@ -777,12 +785,55 @@ header {
 
     .datos-contexto {
         grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .menu h1 {
+        font-size: 19px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .menu ul {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .menu ul.abierto {
+        display: flex;
     }
 
 }
 
-
 @media (max-width: 600px) {
+
+    .menu {
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .menu .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu h1 {
+        font-size: 16px;
+    }
 
     .menu ul {
         gap: 10px;

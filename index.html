@@ -14,26 +14,36 @@
 
     <!-- MENÚ -->
     <header>
-        <nav class="menu">
+       
+<nav class="menu">
 
-            <div class="logo">
-                <img src="https://tecnica3hurlingham.com.ar/logot3.png" alt="Logo EEST N.º 3">
-            </div>
+    <div class="logo">
+        <img src="https://tecnica3hurlingham.com.ar/logot3.png" alt="Logo EEST N.º 3">
+    </div>
 
-            <h1>Materias y Docentes</h1>
+    <h1>Materias y Docentes</h1>
 
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#grupo">Nuestro grupo</a></li>
-                <li><a href="#proyecto">Proyecto</a></li>
-                <li><a href="#mision">Misión y visión</a></li>
-                <li><a href="#clasificacion">Clasificación</a></li>
-                <li><a href="#contexto">Contexto</a></li>
-                <li><a href="#funciones">Funciones</a></li>
-                <li><a href="#escuela">Nuestra escuela</a></li>
-            </ul>
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="menu-enlaces">
+        ☰
+    </button>
 
-        </nav>
+    <ul id="menu-enlaces">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#grupo">Nuestro grupo</a></li>
+        <li><a href="#proyecto">Proyecto</a></li>
+        <li><a href="#mision">Misión y visión</a></li>
+        <li><a href="#clasificacion">Clasificación</a></li>
+        <li><a href="#contexto">Contexto</a></li>
+        <li><a href="#funciones">Funciones</a></li>
+        <li><a href="#escuela">Nuestra escuela</a></li>
+    </ul>
+
+</nav>
+ 
     </header>
 
 
@@ -694,6 +704,24 @@
 
     </section>
 
+<script>
+    const botonMenu = document.querySelector(".menu-toggle");
+    const enlacesMenu = document.querySelector("#menu-enlaces");
 
+    botonMenu.addEventListener("click", function () {
+        const abierto = enlacesMenu.classList.toggle("abierto");
+
+        botonMenu.setAttribute("aria-expanded", abierto);
+        botonMenu.textContent = abierto ? "✕" : "☰";
+    });
+
+    enlacesMenu.querySelectorAll("a").forEach(function (enlace) {
+        enlace.addEventListener("click", function () {
+            enlacesMenu.classList.remove("abierto");
+            botonMenu.setAttribute("aria-expanded", "false");
+            botonMenu.textContent = "☰";
+        });
+    });
+     </script>
 </body>
 </html>
